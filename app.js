@@ -7,3 +7,6 @@ const client = new Discord.Client({
 
 client.login(config.BOT_TOKEN);
 
+client.on('message', (msg) => {
+  console.log(msg);
+})

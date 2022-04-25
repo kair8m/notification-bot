@@ -16,6 +16,10 @@ function setup() {
   client.on('message', (message) => {
     if (message.author.bot)
       return;
+    if (message.channel.type !== 'GUILD_TEXT')
+      return;
+    if (message.channel.name !== 'bot-config')
+      return;
     const user = client.channels.cache.get(message.channelId);
     const isAdmin = message.member.permissionsIn(message.channel).has('ADMINISTRATOR');
     if (!isAdmin) {

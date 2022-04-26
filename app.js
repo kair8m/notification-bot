@@ -1,11 +1,8 @@
 require('dotenv').config();
 const Discord = require('discord.js');
+const client = require('./client');
 
-const client = new Discord.Client({
-  intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES']
-});
-
-const {BOT_TOKEN} = process.env;
+const { BOT_TOKEN } = process.env;
 
 if (!BOT_TOKEN) {
   console.error('no token specified');
